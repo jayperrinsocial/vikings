@@ -3,18 +3,16 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
   <title>Stockport Vikings Football Club</title>
-  <meta name="description" content="Stockport Vikings Football Club - Junior and Senior Football Teams in Stockport">
-  
-  <!-- Poppins Font -->
+  <meta name="description" content="Stockport Vikings Football Club offers football for all. We run junior and senior teams from Under 9s up to Veterans.">
+
+  <!-- Google Font: Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-  
-  <!-- CSS -->
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
-  
+
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
@@ -40,9 +38,9 @@
     </div>
   </div>
 
-  <!-- Navigation Menu -->
-  <header class="header container">
-    <nav class="site-navigation">
+  <!-- Navigation -->
+  <header class="header">
+    <nav class="site-navigation container">
       <ul class="nav">
         <li><a href="about.html">About</a></li>
         <li><a href="teams.html">Teams</a></li>
@@ -56,108 +54,92 @@
     </nav>
   </header>
 
-  <!-- Main Slider -->
+  <!-- Hero Slider -->
   <div class="slider-wrap">
-    <div class="main-slider">
-      <div class="slide">
-        <div class="image">
-          <span class="overlay"></span>
-          <img src="images/slider1.jpg" alt="Stockport Vikings Team" />
-        </div>
-        <div class="caption">
-          <div class="inner">
-            <h2>Stockport Vikings FC</h2>
-            <a class="btn" href="teams.html">Our Teams →</a>
-          </div>
-        </div>
-      </div>
-      <div class="slide">
-        <div class="image">
-          <span class="overlay"></span>
-          <img src="images/slider2.jpg" alt="Stockport Vikings Training" />
-        </div>
-        <div class="caption">
-          <div class="inner">
-            <h2>Join Our Teams</h2>
-            <a class="btn" href="register.html">Register →</a>
-          </div>
-        </div>
+    <div class="slide">
+      <img src="images/slider1.jpg" alt="Stockport Vikings Team">
+      <div class="caption">
+        <h2>Stockport Vikings FC</h2>
+        <a class="btn" href="teams.html">Our Teams →</a>
       </div>
     </div>
-  </div>
-
-  <!-- Introduction -->
-  <section class="intro container">
-    <div class="grid grid-2-column">
-      <div class="intro-text">
-        <h1>Welcome to Stockport Vikings FC</h1>
-        <p>Stockport Vikings Football Club runs junior and senior teams from Under 9s up to Veterans. Join us and be part of a great football community.</p>
-        <a class="btn" href="about.html">About →</a>
-      </div>
-      <div class="intro-image">
-        <img src="images/intro.jpg" alt="Stockport Vikings Players" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Teams Section -->
-  <section class="our-teams container">
-    <h3 class="section-title">Our Teams</h3>
-    <div class="grid grid-2-column">
-      <a class="teams-link" href="teams/boys.html">
-        <span class="image"><img src="images/boys-team.jpg" alt="Boys Teams"></span>
-        <h3>Boys</h3>
-        <p>Under 9s up to Under 18s</p>
-        <span class="btn">View the Boys teams →</span>
-      </a>
-      <a class="teams-link" href="teams/girls.html">
-        <span class="image"><img src="images/girls-team.jpg" alt="Girls Teams"></span>
-        <h3>Girls</h3>
-        <p>Under 10s to Under 13s</p>
-        <span class="btn">View the Girls teams →</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- Latest News -->
-  <section class="latest-news container">
-    <h3 class="section-title">Latest News</h3>
-    <div class="grid">
-      <a class="post-link" href="news/news1.html">
-        <img src="images/news1.jpg" alt="News 1">
-        <span class="post-category">Club News</span>
-        <h3>Season Registration Open</h3>
-        <span class="read-more">Read more →</span>
-      </a>
-      <a class="post-link" href="news/news2.html">
-        <img src="images/news2.jpg" alt="News 2">
-        <span class="post-category">Club News</span>
-        <h3>Under 15s Tryouts</h3>
-        <span class="read-more">Read more →</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- Register Call-to-Action -->
-  <div class="register-to-play">
-    <div class="image">
-      <span class="overlay"></span>
-      <img src="images/register.jpg" alt="Register to Play">
-    </div>
-    <div class="caption">
-      <div class="inner">
-        <h2>Register to play</h2>
-        <p>Complete our online form to join Stockport Vikings FC</p>
+    <div class="slide">
+      <img src="images/slider2.jpg" alt="Stockport Vikings Training">
+      <div class="caption">
+        <h2>Join Our Club</h2>
         <a class="btn" href="register.html">Register →</a>
       </div>
     </div>
   </div>
 
+  <!-- Intro -->
+  <section class="intro container">
+    <div class="grid-2">
+      <div class="intro-text">
+        <h1>Welcome to Stockport Vikings FC</h1>
+        <p>We offer football for all. From junior boys and girls teams through to senior and veterans football, there’s a place for everyone at Stockport Vikings.</p>
+        <a class="btn" href="about.html">About →</a>
+      </div>
+      <div class="intro-image">
+        <img src="images/intro.jpg" alt="Stockport Vikings Players">
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Teams -->
+  <section class="our-teams">
+    <div class="container">
+      <h3 class="section-title">Our Teams</h3>
+      <div class="grid-2">
+        <a class="teams-link" href="teams-boys.html">
+          <img src="images/boys-team.jpg" alt="Boys Teams">
+          <h3>Boys</h3>
+          <p>Under 9s to Under 18s</p>
+        </a>
+        <a class="teams-link" href="teams-girls.html">
+          <img src="images/girls-team.jpg" alt="Girls Teams">
+          <h3>Girls</h3>
+          <p>Under 10s to Under 13s</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest News -->
+  <section class="latest-news">
+    <div class="container">
+      <h3 class="section-title">Latest News</h3>
+      <div class="grid-2">
+        <a class="post-link" href="news-registration-25-26.html">
+          <img src="images/news1.jpg" alt="Season Registration">
+          <h3>25/26 Season Registration</h3>
+          <span class="read-more">Read more →</span>
+        </a>
+        <a class="post-link" href="news-recruiting-under-15s.html">
+          <img src="images/news2.jpg" alt="Recruiting U15s">
+          <h3>Recruiting Under 15s</h3>
+          <span class="read-more">Read more →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Register CTA -->
+  <section class="register-to-play">
+    <img src="images/register.jpg" alt="Register to Play">
+    <div class="caption">
+      <h2>Register to play</h2>
+      <p>Complete our online form to register with Stockport Vikings FC</p>
+      <a class="btn" href="register.html">Register →</a>
+    </div>
+  </section>
+
   <!-- Footer -->
-  <footer class="footer container">
-    <small>&copy; 2025 Stockport Vikings Football Club. All rights reserved.</small>
+  <footer class="footer">
+    <div class="container">
+      <small>&copy; 2025 Stockport Vikings Football Club. All rights reserved.</small>
+    </div>
   </footer>
 
 </body>
-
 </html>
