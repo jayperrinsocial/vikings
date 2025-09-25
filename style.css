@@ -37,11 +37,9 @@ h1, h2, h3 {
 }
 
 .section-title-our-teams {
-  text-align: center;
-  font-size: 3rem;
-   font-color: red;
-  margin-bottom: 30px;
+  color: #ffffff;
 }
+
 
 /* =========================
    Buttons
