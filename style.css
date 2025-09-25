@@ -1,168 +1,386 @@
-/* Global */
-body {
-  font-family: 'Roboto', Arial, sans-serif;
+/* ==============================
+   GLOBAL STYLES
+============================== */
+
+* {
   margin: 0;
-  background: #ffffff;
-  color: #3b393d;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #131c48;
   line-height: 1.6;
 }
+
 a {
-  color: #131c48;
   text-decoration: none;
+  color: inherit;
 }
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ==============================
+   CONTAINERS & GRID
+============================== */
+
 .container {
+  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
 }
 
-/* Buttons */
-a.btn {
-  background: #131c48;
-  color: #ffffff;
-  padding: 12px 24px;
-  border-radius: 25px;
-  display: inline-block;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-a.btn:hover {
-  background: #3b393d;
-  transform: translateY(-2px);
-}
-
-/* Header */
-header {
-  background: #131c48;
-  color: #ffffff;
-}
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-}
-.topbar nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
-}
-.topbar nav ul li a {
-  color: #ffffff;
-  font-weight: bold;
-}
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 0;
-}
-.logo {
-  display: flex;
-  align-items: center;
-}
-.logo img {
-  height: 60px;
-  margin-right: 10px;
-}
-.site-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-.site-navigation ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
-}
-.site-navigation a {
-  color: #ffffff;
-  font-weight: 500;
-}
-
-/* Hero */
-.slider-wrap {
-  position: relative;
-  overflow: hidden;
-}
-.slider-wrap img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-}
-.slider-wrap .caption {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  max-width: 800px;
-  background: rgba(19, 28, 72, 0.85);
-  color: #ffffff;
-  padding: 20px 30px;
-  border-radius: 8px;
-}
-.slider-wrap .caption h2 {
-  margin: 0 0 15px 0;
-  font-size: 2.2rem;
-}
-
-/* Sections */
-section {
-  padding: 60px 0;
-}
-.intro { background: #ffffff; }
-.our-teams { background: #f9f9f9; }
-.latest-news { background: #ffffff; }
-.register-to-play { background: #f9f9f9; }
-.footer-logos { background: #ffffff; }
-
-.section-title {
-  color: #131c48;
-  font-size: 1.8rem;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-/* Grid */
 .grid {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center;
 }
-.grid .teams-link,
-.grid .post-link {
-  flex: 1 1 300px;
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 8px;
-  background: #ffffff;
-  text-align: left;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+.grid-2-column {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
-.grid .teams-link:hover,
-.grid .post-link:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+/* ==============================
+   TOPBAR
+============================== */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #131c48;
+  color: #fff;
+  padding: 10px 0;
 }
-.grid img {
-  width: 100%;
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.badge {
+  height: 70px; /* enlarged badge */
+  width: auto;
+}
+
+.site-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.social-navigation ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+.social-icon {
+  height: 30px;
+  width: auto;
+  transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+.btn {
+  display: inline-block;
+  background-color: #3b393d;
+  color: #fff;
+  padding: 8px 16px;
   border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #131c48;
+}
+
+/* ==============================
+   NAVIGATION
+============================== */
+
+.header {
+  background-color: #fff;
+  border-bottom: 2px solid #3b393d;
+  margin-bottom: 20px;
+}
+
+.site-navigation ul.nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 10px 0;
+}
+
+.site-navigation ul.nav li a {
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #131c48;
+  transition: color 0.3s ease;
+}
+
+.site-navigation ul.nav li a:hover {
+  color: #3b393d;
+}
+
+/* ==============================
+   SLIDER
+============================== */
+
+.slider-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.main-slider .slide {
+  position: relative;
+}
+
+.main-slider .slide .image img {
+  width: 100%;
+  height: auto;
+}
+
+.main-slider .slide .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(19, 28, 72, 0.4);
+}
+
+.caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+}
+
+.caption h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.caption .btn {
+  margin-top: 10px;
+}
+
+/* ==============================
+   INTRO
+============================== */
+
+.intro {
+  padding: 50px 0;
+}
+
+.intro-text h1 {
+  font-size: 2rem;
   margin-bottom: 15px;
 }
 
-/* Footer */
-footer {
-  background: #131c48;
-  color: #ffffff;
-  text-align: center;
-  padding: 40px 20px;
+.intro-text p {
+  font-size: 1rem;
+  margin-bottom: 15px;
 }
-footer small {
+
+/* ==============================
+   TEAMS SECTION
+============================== */
+
+.our-teams {
+  padding: 50px 0;
+  background-color: #f5f5f5;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.teams-link {
   display: block;
-  margin: 5px 0;
-  opacity: 0.85;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.teams-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.teams-link .image img {
+  width: 100%;
+  height: auto;
+}
+
+.teams-link h3 {
+  margin: 10px 0 5px;
+}
+
+.teams-link p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+/* ==============================
+   LATEST NEWS
+============================== */
+
+.latest-news {
+  padding: 50px 0;
+}
+
+.post-link {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.post-link img {
+  width: 100%;
+  height: auto;
+}
+
+.post-category {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #fff;
+  background-color: #131c48;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin: 10px 0 5px;
+}
+
+.post-link h3 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+}
+
+.read-more {
+  font-size: 0.85rem;
+  color: #3b393d;
+  font-weight: 500;
+}
+
+/* ==============================
+   REGISTER CALL-TO-ACTION
+============================== */
+
+.register-to-play {
+  position: relative;
+  margin: 50px 0;
+}
+
+.register-to-play .image img {
+  width: 100%;
+  height: auto;
+}
+
+.register-to-play .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(19, 28, 72, 0.5);
+}
+
+.register-to-play .caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+.register-to-play .caption h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.register-to-play .caption p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+
+.footer {
+  background-color: #131c48;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .topbar-right {
+    gap: 10px;
+  }
+
+  .site-navigation ul.nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .caption h2 {
+    font-size: 1.5rem;
+  }
+
+  .register-to-play .caption h2 {
+    font-size: 1.5rem;
+  }
 }
