@@ -28,6 +28,7 @@ a {
 h1, h2, h3 {
   margin: 0 0 15px;
   font-weight: 700;
+  color: #2d2d2d;
 }
 
 .section-title {
@@ -36,10 +37,13 @@ h1, h2, h3 {
   margin-bottom: 30px;
 }
 
+/* force white for the Our Teams heading */
 .section-title-our-teams {
-  color: #ffffff;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #ffffff !important;
 }
-
 
 /* =========================
    Buttons
@@ -246,7 +250,7 @@ h1, h2, h3 {
 
 .intro-text h1 {
   font-size: 4rem;
-   line-height: 1;
+  line-height: 1;
   margin-bottom: 50px;
 }
 
@@ -256,7 +260,6 @@ h1, h2, h3 {
 .our-teams {
   background: #0b1444;
   padding: 60px 0;
-   font-color: #ffffff; 
 }
 
 .teams-link {
@@ -431,7 +434,8 @@ h1, h2, h3 {
     padding: 15px;
   }
 
-  .section-title {
+  .section-title,
+  .section-title-our-teams {
     font-size: 1.5rem;
   }
 
