@@ -1,0 +1,139 @@
+/* Stockport Vikings FC Styles */
+
+/* Global */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #ffffff;
+  color: #3b393d;
+}
+a {
+  color: #131c48;
+  text-decoration: none;
+}
+a.btn {
+  background: #131c48;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  display: inline-block;
+}
+a.btn:hover {
+  background: #3b393d;
+}
+
+/* Header */
+header {
+  background: #131c48;
+  color: #ffffff;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+}
+nav ul li a {
+  color: #ffffff;
+  font-weight: bold;
+}
+.site-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  height: 60px;
+  margin-right: 10px;
+}
+
+/* Hero */
+.slider-wrap {
+  position: relative;
+}
+.slider-wrap img {
+  width: 100%;
+  height: auto;
+}
+.slider-wrap .caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(19, 28, 72, 0.85);
+  color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 6px;
+}
+.slider-wrap .caption h2 {
+  margin: 0 0 10px 0;
+}
+
+/* Sections */
+.intro, .our-teams, .latest-news, .register-to-play, .footer-logos {
+  padding: 40px 20px;
+  text-align: center;
+}
+.section-title {
+  color: #131c48;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+/* Grid */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.grid .teams-link, .grid .post-link {
+  flex: 1 1 300px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+  background: #f9f9f9;
+  transition: transform 0.2s ease;
+}
+.grid .teams-link:hover, .grid .post-link:hover {
+  transform: translateY(-4px);
+}
+.grid img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* Register */
+.register-to-play h2 {
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  background: #131c48;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+}
+footer .footnotes {
+  display: block;
+  margin-top: 10px;
+}
