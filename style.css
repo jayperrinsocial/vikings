@@ -250,6 +250,7 @@ h1, h2, h3 {
 .our-teams {
   background: #0b1444;
   padding: 60px 0;
+   font-color: #ffffff; 
 }
 
 .teams-link {
