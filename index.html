@@ -1,161 +1,131 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en-GB">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Football for All | Stockport Vikings FC</title>
-  <meta name="description" content="Stockport Vikings Football Club offers football for all. We run junior Boys and Girls teams from Under 9s up to Under 18s, plus a Veterans team." />
+  <meta name="description" content="Stockport Vikings Football Club offers football for all. We run junior Boys and Girls teams from Under 9s up to Under 18s, plus a Veterans team.">
 
-  <!-- Branding colours -->
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #ffffff;
-      color: #3b393d;
-    }
-    header, footer {
-      background: #131c48;
-      color: #ffffff;
-    }
-    a { color: #131c48; text-decoration: none; }
-    a.btn {
-      background: #131c48;
-      color: #ffffff;
-      padding: 10px 20px;
-      border-radius: 4px;
-      display: inline-block;
-    }
-    a.btn:hover { background: #3b393d; }
-    nav ul { list-style: none; padding: 0; display: flex; gap: 1rem; }
-    nav ul li a { color: #ffffff; font-weight: bold; }
-    .site-title { font-size: 1.2rem; font-weight: bold; }
-    .slider-wrap { position: relative; }
-    .slider-wrap img { width: 100%; height: auto; }
-    .intro, .our-teams, .latest-news, .register-to-play, .footer-logos {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .section-title { color: #131c48; font-size: 1.8rem; margin-bottom: 20px; }
-    .grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-    .grid .teams-link, .grid .post-link {
-      flex: 1 1 300px;
-      border: 1px solid #ccc;
-      padding: 20px;
-      border-radius: 8px;
-      text-align: left;
-    }
-    footer .footnotes { display: block; margin-top: 10px; }
-  </style>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
-
-<body class="home">
-  <header role="banner">
-    <div class="topbar">
+<body>
+  <!-- Header -->
+  <header>
+    <div class="topbar container">
       <nav class="social-navigation">
         <ul>
-          <li><a href="https://twitter.com/stockportvikings"><span class="visuallyhidden">Twitter</span></a></li>
-          <li><a href="https://facebook.com/stockportvikings"><span class="visuallyhidden">Facebook</span></a></li>
+          <li><a href="https://twitter.com/stockportvikings">Twitter</a></li>
+          <li><a href="https://facebook.com/stockportvikings">Facebook</a></li>
         </ul>
       </nav>
-      <a class="btn" href="/register">Register →</a>
+      <a class="btn" href="register.html">Register →</a>
     </div>
 
-    <div class="header">
-      <a class="logo" href="/">
-        <img src="/images/stockport-vikings-crest.png" alt="Stockport Vikings FC Crest" />
+    <div class="header container">
+      <a class="logo" href="index.html">
+        <img src="images/stockport-vikings-crest.png" alt="Stockport Vikings FC Crest">
         <span class="site-title"><strong>Stockport Vikings</strong> Football Club</span>
       </a>
-
       <nav class="site-navigation">
         <ul>
-          <li><a href="/about">About</a></li>
-          <li><a href="/teams">Teams</a></li>
-          <li><a href="/documents">Documents</a></li>
-          <li><a href="/sponsors">Sponsors</a></li>
-          <li><a href="/news">News</a></li>
-          <li><a href="/managers">Managers</a></li>
-          <li><a href="/club-shop">Club Shop</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="teams.html">Teams</a></li>
+          <li><a href="documents.html">Documents</a></li>
+          <li><a href="sponsors.html">Sponsors</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="managers.html">Managers</a></li>
+          <li><a href="club-shop.html">Club Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <div id="content">
-    <!-- Hero / Slider -->
-    <div class="slider-wrap">
-      <img src="/images/stockport-vikings-banner.jpg" alt="Stockport Vikings Banner">
-      <div class="caption">
-        <h2>Stockport Vikings FC</h2>
-        <a class="btn" href="/teams">Our Teams →</a>
-      </div>
+  <!-- Hero -->
+  <div class="slider-wrap">
+    <img src="images/stockport-vikings-banner.jpg" alt="Stockport Vikings Banner">
+    <div class="caption">
+      <h2>Stockport Vikings FC</h2>
+      <a class="btn" href="teams.html">Our Teams →</a>
     </div>
+  </div>
 
-    <!-- Intro -->
-    <section class="intro">
+  <!-- Intro -->
+  <section class="intro">
+    <div class="container">
       <h1>Welcome to Stockport Vikings FC</h1>
       <p>Stockport Vikings Football Club offers football for all. We run junior Boys and Girls teams from Under 9s up to Under 18s, with our own Veterans team too.</p>
-      <a class="btn" href="/about">About →</a>
-    </section>
+      <a class="btn" href="about.html">About →</a>
+    </div>
+  </section>
 
-    <!-- Teams -->
-    <section class="our-teams">
+  <!-- Teams -->
+  <section class="our-teams">
+    <div class="container">
       <h3 class="section-title">Our Teams</h3>
       <div class="grid">
-        <a class="teams-link" href="/teams/boys">
-          <img src="/images/boys-team.jpg" alt="Boys Teams">
+        <a class="teams-link" href="teams-boys.html">
+          <img src="images/boys-team.jpg" alt="Boys Teams">
           <h3>Boys</h3>
           <p>Under 9s to Under 18s</p>
         </a>
-        <a class="teams-link" href="/teams/girls">
-          <img src="/images/girls-team.jpg" alt="Girls Teams">
+        <a class="teams-link" href="teams-girls.html">
+          <img src="images/girls-team.jpg" alt="Girls Teams">
           <h3>Girls</h3>
           <p>Under 10s to Under 13s</p>
         </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- News -->
-    <section class="latest-news">
+  <!-- News -->
+  <section class="latest-news">
+    <div class="container">
       <h3 class="section-title">Latest News</h3>
       <div class="grid">
-        <a class="post-link" href="/news/registration-25-26">
-          <img src="/images/news1.jpg" alt="Registration News">
+        <a class="post-link" href="news-registration-25-26.html">
+          <img src="images/news1.jpg" alt="Registration News">
           <h3>25/26 Registration</h3>
           <span class="read-more">Read more →</span>
         </a>
-        <a class="post-link" href="/news/recruiting-under-15s">
-          <img src="/images/news2.jpg" alt="Recruitment News">
+        <a class="post-link" href="news-recruiting-under-15s.html">
+          <img src="images/news2.jpg" alt="Recruitment News">
           <h3>Recruiting Under 15s</h3>
           <span class="read-more">Read more →</span>
         </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Register to play -->
-    <div class="register-to-play">
+  <!-- Register -->
+  <section class="register-to-play">
+    <div class="container">
       <h2>Register to play</h2>
       <p>Complete our online form to register with Stockport Vikings FC</p>
-      <a class="btn" href="/register">Register →</a>
+      <a class="btn" href="register.html">Register →</a>
     </div>
+  </section>
 
-    <!-- Footer logos -->
-    <section class="footer-logos">
+  <!-- Footer logos -->
+  <section class="footer-logos">
+    <div class="container">
       <ul class="grid">
-        <li><img src="/images/fa-charter.png" alt="FA Charter Standard"></li>
-        <li><img src="/images/fa-respect.png" alt="FA Respect"></li>
-        <li><img src="/images/wfa.png" alt="WFA"></li>
+        <li><img src="images/fa-charter.png" alt="FA Charter Standard"></li>
+        <li><img src="images/fa-respect.png" alt="FA Respect"></li>
+        <li><img src="images/wfa.png" alt="WFA"></li>
       </ul>
-    </section>
-  </div>
+    </div>
+  </section>
 
+  <!-- Footer -->
   <footer>
-    <div class="footer">
-      <small class="footnotes">&copy; 2025 Stockport Vikings Football Club. All rights reserved.</small>
-      <small class="credit">Site by Your Name</small>
+    <div class="container">
+      <small>&copy; 2025 Stockport Vikings Football Club. All rights reserved.</small>
+      <small>Site by Your Name</small>
     </div>
   </footer>
 </body>
