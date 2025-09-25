@@ -1,457 +1,262 @@
 /* =========================
-   Global Styles
+   Full updated style.css
+   - ensures slider + register headings are forced white
+   - keeps other headings dark
+   - improves caption legibility
 ========================= */
+
+/* ---------- Global ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+:root{
+  --vik-navy: #131c48;
+  --vik-accent: #3b393d;
+  --white: #ffffff;
+  --text-dark: #2d2d2d;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
+
 body {
   font-family: 'Poppins', Arial, sans-serif;
-  margin: 0;
-  background: #ffffff;
-  color: #2d2d2d;
+  background: var(--white);
+  color: var(--text-dark);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
+/* Images, links */
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
+/* Container */
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
 }
 
+/* Default heading colour (kept dark) */
 h1, h2, h3 {
   margin: 0 0 15px;
   font-weight: 700;
+  color: var(--text-dark);
 }
 
+/* Generic section title (keeps dark by default) */
 .section-title {
   text-align: center;
   font-size: 3rem;
   margin-bottom: 30px;
 }
 
-/* White only for Our Teams */
-.section-title-our-teams {
-  text-align: center;
-  font-size: 3rem;
-  margin-bottom: 30px;
-  color: #ffffff;
-}
-
-/* =========================
-   Buttons
-========================= */
+/* ---------- Buttons ---------- */
 .btn {
   display: inline-block;
   padding: 10px 20px;
-  background: #0b1444; /* Vikings navy */
-  color: #fff;
+  background: var(--vik-navy);
+  color: var(--white);
   border-radius: 25px;
   font-weight: 500;
-  transition: background 0.3s ease;
+  transition: background .25s ease, transform .12s ease;
 }
+.btn:hover { background: var(--vik-accent); transform: translateY(-2px); }
 
-.btn:hover {
-  background: #1f2b6e;
-}
-
-/* =========================
-   Topbar & Header
-========================= */
+/* ---------- Topbar & header ---------- */
 .topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  padding: 12px 0;
   flex-wrap: wrap;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+.logo { display: flex; align-items: center; gap: 12px; }
+.logo .badge { height: 96px; width: auto; }
+.site-title { font-size: 1.4rem; font-weight: 600; color: var(--vik-navy); }
 
-.logo .badge {
-  height: 100px;
-}
+.topbar-right { display: flex; align-items: center; gap: 14px; }
+.social-navigation ul { list-style: none; display: flex; gap: 10px; margin: 0; padding: 0; }
+.social-icon { width: 26px; height: 26px; }
 
-.site-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #0b1444;
-}
-
-.topbar-right {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.social-navigation ul {
-  list-style: none;
-  display: flex;
-  gap: 10px;
-  margin: 0;
-  padding: 0;
-}
-
-.social-icon {
-  width: 24px;
-  height: 24px;
-}
-
-/* Navigation */
-.header {
-  background: #0b1444;
-}
-
+/* Main nav bar */
+.header { background: var(--vik-navy); }
 .site-navigation .nav {
   list-style: none;
   display: flex;
   justify-content: center;
+  gap: 24px;
   margin: 0;
-  padding: 10px 0;
-  gap: 25px;
+  padding: 12px 0;
   flex-wrap: wrap;
 }
+.site-navigation a { color: #fff; font-weight: 500; }
+.site-navigation a:hover { color: #ffcc00; }
 
-.site-navigation a {
-  color: #fff;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
+/* ---------- Hero slider ---------- */
+.slider-wrap { position: relative; overflow: hidden; }
 
-.site-navigation a:hover {
-  color: #ffcc00;
-}
+/* slider container */
+.slider { position: relative; }
 
-/* =========================
-   Hero Slider
-========================= */
-.slider-wrap {
-  position: relative;
-  overflow: hidden;
-}
+/* each slide hidden by default */
+.slide { display: none; position: relative; }
 
-.slider {
-  position: relative;
-}
-
-.slide {
-  display: none;
-  position: relative;
-}
-
+/* active slide */
 .slide.active {
   display: block;
-  animation: fade 1s ease-in-out;
+  animation: fade 900ms ease-in-out;
 }
 
-@keyframes fade {
-  from { opacity: 0.4; }
-  to { opacity: 1; }
-}
+/* fade animation */
+@keyframes fade { from { opacity: 0.35; } to { opacity: 1; } }
 
-.slide img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-}
+/* image sits at base layer */
+.slide img { width: 100%; height: 500px; object-fit: cover; display: block; z-index: 1; }
 
+/* caption - sits above image */
 .slide .caption {
   position: absolute;
-  bottom: 20%;
-  left: 10%;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 20px;
+  bottom: 18%;
+  left: 8%;
+  z-index: 60;                       /* ensure above image/controls */
+  background: rgba(0,0,0,0.55);
+  padding: 18px 22px;
   border-radius: 10px;
-  color: #fff;
-  max-width: 300px;
+  max-width: 360px;
+  color: var(--white);               /* default caption text white */
+  -webkit-backface-visibility: hidden;
 }
 
-/* ✅ Slider captions headings white */
+/* FORCE slider caption h2 to white with high specificity */
+.slider .slide .caption h2,
 .slide .caption h2 {
+  color: var(--white) !important;    /* ensure it overrides generic h2 rules */
   font-size: 2rem;
   margin-bottom: 10px;
-  color: #ffffff;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.6); /* improves legibility */
 }
 
-/* Slider Arrows */
+/* small caption text */
+.slide .caption p,
+.slide .caption .btn {
+  color: var(--white);
+}
+
+/* arrows */
 .slider-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.55);
   border: none;
   color: #fff;
-  font-size: 2rem;
-  padding: 8px 10px;
+  font-size: 1.8rem;
+  padding: 8px 12px;
   cursor: pointer;
   border-radius: 50%;
-  transition: background 0.3s ease;
-  z-index: 10;
+  z-index: 70;
 }
+.slider-btn:hover { background: rgba(0,0,0,0.8); }
+.slider-btn.prev { left: 18px; }
+.slider-btn.next { right: 18px; }
 
-.slider-btn:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.slider-btn.prev {
-  left: 20px;
-}
-
-.slider-btn.next {
-  right: 20px;
-}
-
-/* Slider Dots */
-.dots {
-  text-align: center;
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
+/* dots */
+.dots { position: absolute; left: 50%; transform: translateX(-50%); bottom: 18px; z-index: 70; text-align: center; }
 .dot {
   display: inline-block;
-  width: 12px;
-  height: 12px;
-  margin: 0 5px;
-  background: #bbb;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background 0.3s ease;
+  width: 12px; height: 12px; margin: 0 6px;
+  background: #bbb; border-radius: 50%;
+  cursor: pointer; transition: background .2s ease;
 }
+.dot.active { background: var(--vik-navy); }
 
-.dot.active {
-  background: #0b1444;
-}
+/* ---------- Intro ---------- */
+.intro { padding: 40px 0; }
+.grid-2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; align-items: center; }
+.intro-text h1 { font-size: 2.4rem; margin-bottom: 18px; }
 
-/* =========================
-   Intro
-========================= */
-.intro {
-  padding: 40px 0;
-}
+/* ---------- Our Teams ---------- */
+.our-teams { background: var(--vik-navy); padding: 60px 0; }
 
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  align-items: center;
-}
-
-.intro-text h1 {
-  font-size: 4rem;
-  line-height: 1;
-  margin-bottom: 50px;
-}
-
-/* =========================
-   Our Teams
-========================= */
-.our-teams {
-  background: #0b1444;
-  padding: 60px 0;
+/* keep default section-title styling, but our custom class forced white */
+.section-title-our-teams {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  color: var(--white) !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.45);
 }
 
 .teams-link {
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform .25s ease, box-shadow .25s ease;
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 18px;
 }
+.teams-link img { height: 200px; width: 100%; object-fit: cover; }
+.teams-link h3 { margin-top: 12px; color: var(--vik-navy); }
+.teams-link:hover { transform: translateY(-6px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
 
-.teams-link img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
+/* ---------- Latest News ---------- */
+.latest-news { padding: 60px 0; background: #fff; }
+.post-link { display: block; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.08); transition: transform .25s ease; }
+.post-link img { height: 200px; width: 100%; object-fit: cover; }
+.post-link h3 { padding: 14px; font-size: 1.05rem; color: var(--text-dark); }
+.read-more { display: block; padding: 0 14px 14px; color: var(--vik-navy); font-weight: 500; }
+.post-link:hover { transform: translateY(-6px); }
 
-.teams-link h3 {
-  margin-top: 15px;
-  color: #0b1444;
-}
-
-.teams-link:hover {
-  transform: translateY(-5px);
-}
-
-/* =========================
-   Latest News
-========================= */
-.latest-news {
-  padding: 60px 0;
-}
-
-.post-link {
-  display: block;
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.post-link img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.post-link h3 {
-  padding: 15px;
-  font-size: 1.1rem;
-}
-
-.read-more {
-  display: block;
-  padding: 0 15px 15px;
-  color: #0b1444;
-  font-weight: 500;
-}
-
-.post-link:hover {
-  transform: translateY(-5px);
-}
-
-/* =========================
-   Register CTA
-========================= */
-.register-to-play {
-  position: relative;
-  text-align: center;
-  color: #fff;
-}
-
-.register-to-play img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
-
+/* ---------- Register CTA ---------- */
+.register-to-play { position: relative; text-align: center; color: var(--white); }
+.register-to-play img { width: 100%; height: 300px; object-fit: cover; display: block; }
 .register-to-play .caption {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0,0,0,0.6);
-  padding: 30px;
-  border-radius: 10px;
+  left: 50%; top: 50%;
+  transform: translate(-50%,-50%);
+  padding: 28px; border-radius: 10px;
+  background: rgba(0,0,0,0.55); z-index: 60;
 }
 
-/* ✅ Register caption heading white */
+/* FORCE register heading white */
 .register-to-play .caption h2 {
+  color: var(--white) !important;
+  font-size: 1.8rem;
+  text-shadow: 0 3px 14px rgba(0,0,0,0.6);
   margin-bottom: 10px;
-  color: #ffffff;
 }
 
-/* =========================
-   Footer
-========================= */
-.footer {
-  background: #0b1444;
-  color: #fff;
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
-}
+.register-to-play .caption p { color: #f5f5f5; }
 
-.footer small {
-  font-size: 0.9rem;
-}
+/* ---------- Footer ---------- */
+.footer { background: var(--vik-navy); color: var(--white); text-align: center; padding: 20px 0; margin-top: 30px; }
+.footer small { font-size: .9rem; }
 
-/* =========================
-   Responsive
-========================= */
+/* ---------- Responsive ---------- */
 @media (max-width: 992px) {
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-
-  .intro {
-    text-align: center;
-  }
-
-  .intro-image {
-    order: -1;
-  }
-
-  .logo .badge {
-    height: 60px;
-  }
-
-  .slide img {
-    height: 350px;
-  }
-
-  .slide .caption {
-    position: static;
-    background: none;
-    padding: 20px 0 0;
-    color: #0b1444;
-    text-align: center;
-    max-width: 100%;
-  }
-
-  .slide .caption h2 {
-    font-size: 1.5rem;
-    color: #ffffff; /* ✅ ensure white on mobile too */
-  }
-
-  .slider-btn {
-    font-size: 1.5rem;
-    padding: 6px 10px;
-  }
+  .grid-2 { grid-template-columns: 1fr; }
+  .intro { text-align: center; }
+  .intro-image { order: -1; }
+  .logo .badge { height: 72px; }
+  .slide img { height: 360px; }
+  /* on narrower screens captions flow in document, but still force white */
+  .slide .caption { position: static; background: none; padding: 20px 0 0; color: var(--white); max-width: 100%; text-align: center; }
+  .slide .caption h2 { color: var(--white) !important; font-size: 1.5rem; text-shadow: 0 3px 10px rgba(0,0,0,0.6); }
+  .slider-btn { font-size: 1.4rem; padding: 6px 10px; }
+  .register-to-play img { height: 240px; }
 }
 
 @media (max-width: 600px) {
-  .site-title {
-    font-size: 1rem;
-  }
-
-  .btn {
-    padding: 8px 15px;
-    font-size: 0.9rem;
-  }
-
-  .slide img {
-    height: 220px;
-  }
-
-  .register-to-play img {
-    height: 220px;
-  }
-
-  .register-to-play .caption {
-    padding: 15px;
-  }
-
-  .section-title {
-    font-size: 1.5rem;
-  }
-
-  .slider-btn.prev {
-    left: 10px;
-  }
-
-  .slider-btn.next {
-    right: 10px;
-  }
-
-  .dot {
-    width: 10px;
-    height: 10px;
-  }
+  .site-title { font-size: 1rem; }
+  .btn { padding: 8px 14px; font-size: .95rem; }
+  .slide img { height: 220px; }
+  .register-to-play img { height: 200px; }
+  .section-title, .section-title-our-teams { font-size: 1.6rem; }
+  .dot { width: 10px; height: 10px; }
 }
