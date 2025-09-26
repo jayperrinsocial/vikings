@@ -176,12 +176,12 @@ h1, h2, h3 {
 .dot.active { background: var(--vik-navy); }
 
 /* =========================
-   Intro with faded logo on left
+   Intro with faded logo
 ========================= */
 .intro {
   padding: 60px 0;
   position: relative;
-  background: #ffffff; /* white section */
+  background: #ffffff; /* keep white background */
   overflow: hidden;
 }
 
@@ -189,62 +189,36 @@ h1, h2, h3 {
   content: "";
   position: absolute;
   top: 50%;
-  left: 15%; /* left side watermark */
-  width: 350px;
-  height: 350px;
+  left: 50%;
+  width: 400px; /* adjust size */
+  height: 400px;
   background: url("images/stockport-vikings-crest-faded.png") no-repeat center;
   background-size: contain;
-  opacity: 0.05; /* very faint */
-  transform: translateY(-50%) rotate(-15deg);
+  opacity: 0.08; /* faint watermark effect */
+  transform: translate(-50%, -50%) rotate(-15deg); /* center and slant */
   z-index: 0;
 }
 
 .intro .grid-2 {
   position: relative;
-  z-index: 1; /* text + image above watermark */
+  z-index: 1; /* keep text and image above watermark */
 }
 
 .intro-text h1 {
-  font-size: 5rem;   /* bigger heading on desktop */
+  font-size: 4.5rem;   /* large on desktop */
   line-height: 1.1;
   margin-bottom: 30px;
 }
 
 .intro-text p {
-  font-size: 1.3rem; /* bigger body text */
-  line-height: 1.7;
+  font-size: 1.2rem;   /* slightly larger body text */
+  line-height: 1.6;
 }
 
-/* =========================
-   Responsive adjustments
-========================= */
+/* Responsive adjustments */
 @media (max-width: 992px) {
   .intro-text h1 {
-    font-size: 3.5rem;
-  }
-
-  .intro-text p {
-    font-size: 1.2rem;
-  }
-
-  .intro::before {
-    left: 10%;
-    width: 250px;
-    height: 250px;
-    opacity: 0.06; /* slightly stronger */
-  }
-}
-
-@media (max-width: 600px) {
-  .intro-text {
-    background: rgba(255, 255, 255, 0.85); /* white box behind text */
-    padding: 15px;
-    border-radius: 8px;
-  }
-
-  .intro-text h1 {
-    font-size: 2.5rem;
-    line-height: 1.2;
+    font-size: 3rem;   /* scale down on tablets */
   }
 
   .intro-text p {
@@ -252,14 +226,27 @@ h1, h2, h3 {
   }
 
   .intro::before {
-    left: 50%; /* center watermark on mobile */
-    width: 180px;
-    height: 180px;
-    transform: translate(-50%, -50%) rotate(-15deg);
-    opacity: 0.08; /* slightly stronger so it shows */
+    width: 300px;
+    height: 300px; /* scale watermark for tablets */
   }
 }
 
+@media (max-width: 600px) {
+  .intro-text h1 {
+    font-size: 2rem;   /* smaller on mobile */
+    line-height: 1.2;
+  }
+
+  .intro-text p {
+    font-size: 1rem;
+  }
+
+  .intro::before {
+    width: 200px;
+    height: 200px; /* smaller watermark for mobile */
+    opacity: 0.12; /* slightly stronger so it's still visible */
+  }
+}
 
 
 /* ---------- Our Teams ---------- */
@@ -323,42 +310,61 @@ h1, h2, h3 {
 
 .register-to-play .caption p { color: #f5f5f5; }
 
-/* =========================
-   Sponsor Logos
-========================= */
-.sponsors-logos {
+/* Sponsors section */
+.sponsors {
+  background: #f8f8f8; /* light grey background */
+  padding: 50px 0;
+  text-align: center;
+}
+
+.sponsors .section-title {
+  margin-bottom: 30px;
+}
+
+.sponsor-logos {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
-  gap: 30px;
-  padding: 40px 0;
-  background: #ffffff;
+  justify-content: center;
+  gap: 40px; /* spacing between logos */
 }
 
-.sponsors-logos img {
-  max-height: 100px; /* larger on desktop */
-  margin: 0 15px;
-  transition: transform 0.3s ease;
+.sponsor-logos img {
+  max-height: 100px; /* consistent logo height */
+  max-width: 160px;
+  object-fit: contain;
+  filter: grayscale(100%); /* subtle grey effect */
+  transition: filter 0.3s ease, transform 0.3s ease;
 }
 
-.sponsors-logos img:hover {
-  transform: scale(1.05);
+.sponsor-logos img:hover {
+  filter: grayscale(0%); /* full colour on hover */
+  transform: scale(1.05); /* subtle zoom effect */
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  .sponsors-logos img {
-    max-height: 85px; /* scale down on tablets */
+/* ✅ Mobile responsiveness */
+@media (max-width: 768px) {
+  .sponsor-logos {
+    gap: 25px;
+  }
+
+  .sponsor-logos img {
+    max-height: 50px;
+    max-width: 120px;
   }
 }
 
-@media (max-width: 600px) {
-  .sponsors-logos img {
-    max-height: 70px; /* smaller on mobile */
+@media (max-width: 480px) {
+  .sponsor-logos {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .sponsor-logos img {
+    max-width: 80%;
+    height: auto;
   }
 }
-
 
 
 /* =========================
