@@ -76,8 +76,8 @@ h1, h2, h3 {
 }
 
 .logo { display: flex; align-items: center; gap: 12px; }
-.logo .badge { height: 106px; width: auto; }
-.site-title { font-size: 1.4rem; font-weight: 600; color: var(--vik-navy); }
+.logo .badge { height: 96px; width: auto; }
+.site-title { font-size: 2.4rem; font-weight: 600; color: var(--vik-navy); }
 
 .topbar-right { display: flex; align-items: center; gap: 14px; }
 .social-navigation ul { list-style: none; display: flex; gap: 10px; margin: 0; padding: 0; }
@@ -175,79 +175,10 @@ h1, h2, h3 {
 }
 .dot.active { background: var(--vik-navy); }
 
-/* =========================
-   Intro with faded logo
-========================= */
-.intro {
-  padding: 60px 0;
-  position: relative;
-  background: #ffffff; /* keep white background */
-  overflow: hidden;
-}
-
-.intro::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px; /* adjust size */
-  height: 400px;
-  background: url("images/stockport-vikings-crest-faded.png") no-repeat center;
-  background-size: contain;
-  opacity: 0.08; /* faint watermark effect */
-  transform: translate(-50%, -50%) rotate(-15deg); /* center and slant */
-  z-index: 0;
-}
-
-.intro .grid-2 {
-  position: relative;
-  z-index: 1; /* keep text and image above watermark */
-}
-
-.intro-text h1 {
-  font-size: 4.5rem;   /* large on desktop */
-  line-height: 1.1;
-  margin-bottom: 30px;
-}
-
-.intro-text p {
-  font-size: 1.2rem;   /* slightly larger body text */
-  line-height: 1.6;
-}
-
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  .intro-text h1 {
-    font-size: 3rem;   /* scale down on tablets */
-  }
-
-  .intro-text p {
-    font-size: 1.1rem;
-  }
-
-  .intro::before {
-    width: 300px;
-    height: 300px; /* scale watermark for tablets */
-  }
-}
-
-@media (max-width: 600px) {
-  .intro-text h1 {
-    font-size: 2rem;   /* smaller on mobile */
-    line-height: 1.2;
-  }
-
-  .intro-text p {
-    font-size: 1rem;
-  }
-
-  .intro::before {
-    width: 200px;
-    height: 200px; /* smaller watermark for mobile */
-    opacity: 0.12; /* slightly stronger so it's still visible */
-  }
-}
-
+/* ---------- Intro ---------- */
+.intro { padding: 40px 0; }
+.grid-2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; align-items: center; }
+.intro-text h1 { font-size: 2.4rem; margin-bottom: 18px; }
 
 /* ---------- Our Teams ---------- */
 .our-teams { background: var(--vik-navy); padding: 60px 0; }
