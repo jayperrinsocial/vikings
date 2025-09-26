@@ -77,7 +77,7 @@ h1, h2, h3 {
 
 .logo { display: flex; align-items: center; gap: 12px; }
 .logo .badge { height: 96px; width: auto; }
-.site-title { font-size: 2.4rem; font-weight: 600; color: var(--vik-navy); }
+.site-title { font-size: 3.4rem; font-weight: 600; color: var(--vik-navy); }
 
 .topbar-right { display: flex; align-items: center; gap: 14px; }
 .social-navigation ul { list-style: none; display: flex; gap: 10px; margin: 0; padding: 0; }
