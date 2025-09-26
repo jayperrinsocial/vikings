@@ -176,17 +176,32 @@ h1, h2, h3 {
 .dot.active { background: var(--vik-navy); }
 
 /* =========================
-   Intro
+   Intro with faded logo
 ========================= */
 .intro {
-  padding: 40px 0;
+  padding: 60px 0;
+  position: relative;
+  background: #ffffff; /* keep white background */
+  overflow: hidden;
 }
 
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  align-items: center;
+.intro::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px; /* adjust size */
+  height: 400px;
+  background: url("images/stockport-vikings-crest-faded.png") no-repeat center;
+  background-size: contain;
+  opacity: 0.08; /* faint watermark effect */
+  transform: translate(-50%, -50%) rotate(-15deg); /* center and slant */
+  z-index: 0;
+}
+
+.intro .grid-2 {
+  position: relative;
+  z-index: 1; /* keep text and image above watermark */
 }
 
 .intro-text h1 {
@@ -209,6 +224,11 @@ h1, h2, h3 {
   .intro-text p {
     font-size: 1.1rem;
   }
+
+  .intro::before {
+    width: 300px;
+    height: 300px; /* scale watermark for tablets */
+  }
 }
 
 @media (max-width: 600px) {
@@ -219,6 +239,12 @@ h1, h2, h3 {
 
   .intro-text p {
     font-size: 1rem;
+  }
+
+  .intro::before {
+    width: 200px;
+    height: 200px; /* smaller watermark for mobile */
+    opacity: 0.12; /* slightly stronger so it's still visible */
   }
 }
 
