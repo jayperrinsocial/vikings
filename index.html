@@ -41,9 +41,12 @@
 <!-- Navigation -->
 <header class="header">
   <nav class="site-navigation container">
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      ☰
-    </button>
+    <!-- Mobile hamburger (hidden on desktop) -->
+    <input type="checkbox" id="nav-toggle" class="hamburger-toggle" aria-hidden="true">
+    <label for="nav-toggle" class="hamburger-label" aria-label="Toggle menu">
+      <span class="hamburger-icon"></span>
+    </label>
+
     <ul class="nav" id="nav-menu">
       <li><a href="about.html">About</a></li>
       <li><a href="teams.html">Teams</a></li>
@@ -56,6 +59,7 @@
     </ul>
   </nav>
 </header>
+
 
 
   <!-- Hero Slider -->
