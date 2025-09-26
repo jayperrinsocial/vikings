@@ -56,7 +56,7 @@ h1, h2, h3 {
 
 /* Bigger intro heading */
 .intro-heading {
-  font-size: 5rem;   /* really large on desktop */
+  font-size: 6rem;   /* really large on desktop */
   line-height: 1.1;
   margin-bottom: 30px;
 }
