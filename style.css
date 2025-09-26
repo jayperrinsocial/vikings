@@ -181,7 +181,7 @@ h1, h2, h3 {
 .intro {
   padding: 60px 0;
   position: relative;
-  background: #ffffff;
+  background: #ffffff; /* white section */
   overflow: hidden;
 }
 
@@ -194,24 +194,24 @@ h1, h2, h3 {
   height: 350px;
   background: url("images/stockport-vikings-crest-faded.png") no-repeat center;
   background-size: contain;
-  opacity: 0.05; /* very faint on desktop */
+  opacity: 0.05; /* very faint */
   transform: translateY(-50%) rotate(-15deg);
   z-index: 0;
 }
 
 .intro .grid-2 {
   position: relative;
-  z-index: 1; /* keep text above watermark */
+  z-index: 1; /* text + image above watermark */
 }
 
 .intro-text h1 {
-  font-size: 5rem;   /* larger heading */
+  font-size: 5rem;   /* bigger heading on desktop */
   line-height: 1.1;
   margin-bottom: 30px;
 }
 
 .intro-text p {
-  font-size: 1.3rem; /* larger body text */
+  font-size: 1.3rem; /* bigger body text */
   line-height: 1.7;
 }
 
@@ -220,7 +220,7 @@ h1, h2, h3 {
 ========================= */
 @media (max-width: 992px) {
   .intro-text h1 {
-    font-size: 3.5rem; /* scale down on tablets */
+    font-size: 3.5rem;
   }
 
   .intro-text p {
@@ -228,22 +228,22 @@ h1, h2, h3 {
   }
 
   .intro::before {
-    left: 10%; 
+    left: 10%;
     width: 250px;
     height: 250px;
-    opacity: 0.06; /* slightly more visible on tablets */
+    opacity: 0.06; /* slightly stronger */
   }
 }
 
 @media (max-width: 600px) {
   .intro-text {
-    background: rgba(255, 255, 255, 0.85); /* subtle white box */
+    background: rgba(255, 255, 255, 0.85); /* white box behind text */
     padding: 15px;
     border-radius: 8px;
   }
 
   .intro-text h1 {
-    font-size: 2.5rem; /* strong but mobile-friendly */
+    font-size: 2.5rem;
     line-height: 1.2;
   }
 
@@ -252,13 +252,14 @@ h1, h2, h3 {
   }
 
   .intro::before {
-    left: 50%;
+    left: 50%; /* center watermark on mobile */
     width: 180px;
     height: 180px;
     transform: translate(-50%, -50%) rotate(-15deg);
-    opacity: 0.08; /* a bit stronger so watermark shows */
+    opacity: 0.08; /* slightly stronger so it shows */
   }
 }
+
 
 
 /* ---------- Our Teams ---------- */
