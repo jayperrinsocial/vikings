@@ -159,6 +159,116 @@ h1, h2, h3 {
 .site-navigation a { color: #fff; font-weight: 500; }
 .site-navigation a:hover { color: #ffcc00; }
 
+/* =========================
+   Mobile Hamburger Menu (CSS-only)
+========================= */
+
+/* Hidden checkbox (controls open/close) */
+.hamburger-toggle {
+  display: none;
+}
+
+/* The clickable hamburger button (hidden on desktop) */
+.hamburger-label {
+  display: none;                 /* default: hidden (desktop) */
+  cursor: pointer;
+  padding: 10px;
+  line-height: 1;
+}
+
+/* 3-line hamburger icon */
+.hamburger-icon {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: background 0.2s ease;
+}
+.hamburger-icon::before,
+.hamburger-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.2s ease, top 0.2s ease, opacity 0.2s ease;
+}
+.hamburger-icon::before { top: -8px; }
+.hamburger-icon::after  { top: 8px; }
+
+/* Desktop nav stays as-is */
+@media (min-width: 769px) {
+  .site-navigation .nav {
+    display: flex;               /* your current desktop layout */
+  }
+}
+
+/* Mobile: show hamburger, hide menu until toggled */
+@media (max-width: 768px) {
+  .site-navigation {
+    position: relative;
+    min-height: 52px;            /* space for the hamburger */
+  }
+
+  /* Show the hamburger button */
+  .hamburger-label {
+    display: block;
+    position: absolute;
+    right: 16px;
+    top: 10px;
+    z-index: 1001;
+  }
+
+  /* Hide the menu by default on mobile */
+  .site-navigation .nav {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: #131c48;         /* Vikings navy */
+    padding: 10px 0;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    z-index: 1000;
+  }
+  .site-navigation .nav li {
+    text-align: center;
+    margin: 6px 0;
+  }
+  .site-navigation .nav a {
+    color: #fff;
+    padding: 10px 16px;
+    display: inline-block;
+  }
+  .site-navigation .nav a:hover {
+    color: #ffcc00;
+  }
+
+  /* When checkbox is checked -> show menu */
+  .hamburger-toggle:checked ~ .nav {
+    display: flex;
+  }
+
+  /* Turn hamburger into "X" when open */
+  .hamburger-toggle:checked + .hamburger-label .hamburger-icon {
+    background: transparent;
+  }
+  .hamburger-toggle:checked + .hamburger-label .hamburger-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+  .hamburger-toggle:checked + .hamburger-label .hamburger-icon::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+}
+
+
 /* ---------- Hero slider ---------- */
 .slider-wrap { position: relative; overflow: hidden; }
 
