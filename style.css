@@ -298,9 +298,39 @@ h1, h2, h3 {
 }
 
 
-/* ---------- Footer ---------- */
-.footer { background: var(--vik-navy); color: var(--white); text-align: center; padding: 20px 0; margin-top: 30px; }
-.footer small { font-size: .9rem; }
+/* =========================
+   Footer
+========================= */
+.footer {
+  background: #0b1444;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+.footer small {
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.footer a {
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ffcc00; /* Vikings gold */
+}
+
+.footer .credit {
+  font-size: 0.8rem;  /* slightly smaller */
+  margin-top: 5px;
+  display: block;
+}
+
 
 /* ---------- Responsive ---------- */
 @media (max-width: 992px) {
