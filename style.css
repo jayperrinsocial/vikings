@@ -54,6 +54,26 @@ h1, h2, h3 {
   margin-bottom: 30px;
 }
 
+/* Bigger intro heading */
+.intro-heading {
+  font-size: 5rem;   /* really large on desktop */
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 992px) {
+  .intro-heading {
+    font-size: 3.5rem; /* scale down for tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .intro-heading {
+    font-size: 2.5rem; /* mobile size */
+  }
+}
+
+
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-block;
