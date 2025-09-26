@@ -175,10 +175,53 @@ h1, h2, h3 {
 }
 .dot.active { background: var(--vik-navy); }
 
-/* ---------- Intro ---------- */
-.intro { padding: 40px 0; }
-.grid-2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; align-items: center; }
-.intro-text h1 { font-size: 2.4rem; margin-bottom: 18px; }
+/* =========================
+   Intro
+========================= */
+.intro {
+  padding: 40px 0;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  align-items: center;
+}
+
+.intro-text h1 {
+  font-size: 4.5rem;   /* large on desktop */
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.intro-text p {
+  font-size: 1.2rem;   /* slightly larger body text */
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .intro-text h1 {
+    font-size: 3rem;   /* scale down on tablets */
+  }
+
+  .intro-text p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .intro-text h1 {
+    font-size: 2rem;   /* smaller on mobile */
+    line-height: 1.2;
+  }
+
+  .intro-text p {
+    font-size: 1rem;
+  }
+}
+
 
 /* ---------- Our Teams ---------- */
 .our-teams { background: var(--vik-navy); padding: 60px 0; }
