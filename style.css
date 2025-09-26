@@ -176,12 +176,12 @@ h1, h2, h3 {
 .dot.active { background: var(--vik-navy); }
 
 /* =========================
-   Intro with faded logo
+   Intro with faded logo on left
 ========================= */
 .intro {
   padding: 60px 0;
   position: relative;
-  background: #ffffff; /* keep white background */
+  background: #ffffff;
   overflow: hidden;
 }
 
@@ -189,36 +189,62 @@ h1, h2, h3 {
   content: "";
   position: absolute;
   top: 50%;
-  left: 50%;
-  width: 400px; /* adjust size */
-  height: 400px;
+  left: 15%; /* left side watermark */
+  width: 350px;
+  height: 350px;
   background: url("images/stockport-vikings-crest-faded.png") no-repeat center;
   background-size: contain;
-  opacity: 0.08; /* faint watermark effect */
-  transform: translate(-50%, -50%) rotate(-15deg); /* center and slant */
+  opacity: 0.05; /* very faint on desktop */
+  transform: translateY(-50%) rotate(-15deg);
   z-index: 0;
 }
 
 .intro .grid-2 {
   position: relative;
-  z-index: 1; /* keep text and image above watermark */
+  z-index: 1; /* keep text above watermark */
 }
 
 .intro-text h1 {
-  font-size: 4.5rem;   /* large on desktop */
+  font-size: 5rem;   /* larger heading */
   line-height: 1.1;
   margin-bottom: 30px;
 }
 
 .intro-text p {
-  font-size: 1.2rem;   /* slightly larger body text */
-  line-height: 1.6;
+  font-size: 1.3rem; /* larger body text */
+  line-height: 1.7;
 }
 
-/* Responsive adjustments */
+/* =========================
+   Responsive adjustments
+========================= */
 @media (max-width: 992px) {
   .intro-text h1 {
-    font-size: 3rem;   /* scale down on tablets */
+    font-size: 3.5rem; /* scale down on tablets */
+  }
+
+  .intro-text p {
+    font-size: 1.2rem;
+  }
+
+  .intro::before {
+    left: 10%; 
+    width: 250px;
+    height: 250px;
+    opacity: 0.06; /* slightly more visible on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .intro-text {
+    background: rgba(255, 255, 255, 0.85); /* subtle white box */
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .intro-text h1 {
+    font-size: 2.5rem; /* strong but mobile-friendly */
+    line-height: 1.2;
   }
 
   .intro-text p {
@@ -226,25 +252,11 @@ h1, h2, h3 {
   }
 
   .intro::before {
-    width: 300px;
-    height: 300px; /* scale watermark for tablets */
-  }
-}
-
-@media (max-width: 600px) {
-  .intro-text h1 {
-    font-size: 2rem;   /* smaller on mobile */
-    line-height: 1.2;
-  }
-
-  .intro-text p {
-    font-size: 1rem;
-  }
-
-  .intro::before {
-    width: 200px;
-    height: 200px; /* smaller watermark for mobile */
-    opacity: 0.12; /* slightly stronger so it's still visible */
+    left: 50%;
+    width: 180px;
+    height: 180px;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    opacity: 0.08; /* a bit stronger so watermark shows */
   }
 }
 
